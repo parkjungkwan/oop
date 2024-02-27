@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void updatePassword(UserDto user) {
+    public String updatePassword(UserDto user) {
 
     }
 
@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int countUsers() {
+    public String countUsers() {
         return 0;
     }
 }

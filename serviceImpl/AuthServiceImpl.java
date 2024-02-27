@@ -19,19 +19,7 @@ public class AuthServiceImpl implements AuthService {
     public static AuthService getInstance(){return instance;}
     @Override
     public String join(Scanner sc) {
-        System.out.println("ID, 비밀번호, 비밀번호 확인, " +
-                "이름, 주민번호 전화번호, " +
-                "주소, 직업을 입력해주세요");
 
-        UserDto person = new UserBuilder()
-                .username(sc.next())
-                .password(sc.next())
-                .passwordConfirm(sc.next())
-                .name(sc.next())
-                .address(sc.next())
-                .job(sc.next())
-                .build()
-                ;
         return null;
     }
 
