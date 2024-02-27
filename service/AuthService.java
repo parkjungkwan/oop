@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public interface AuthService {
+    String addUsers();
     String join(UserDto user);
     String login(UserDto user);
     UserDto findUserById(String username);

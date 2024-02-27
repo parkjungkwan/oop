@@ -18,13 +18,48 @@ public class AuthServiceImpl implements AuthService {
     }
     public static AuthService getInstance(){return instance;}
     @Override
-    public String join(Scanner sc) {
+    public String join(UserDto user) {
 
         return null;
     }
 
     @Override
-    public String login() {
+    public String login(UserDto user) {
+        return null;
+    }
+
+    @Override
+    public UserDto findUserById(String username) {
+        return null;
+    }
+
+    @Override
+    public String updatePassword(UserDto user) {
+        return null;
+    }
+
+    @Override
+    public String deleteUser(String username) {
+        return null;
+    }
+
+    @Override
+    public List<UserDto> getUserList() {
+        return null;
+    }
+
+    @Override
+    public List<UserDto> findUsersByName(String name) {
+        return null;
+    }
+
+    @Override
+    public List<UserDto> findUsersByJob(String job) {
+        return null;
+    }
+
+    @Override
+    public String countUsers() {
         return null;
     }
 
@@ -48,21 +83,5 @@ public class AuthServiceImpl implements AuthService {
 
     }
 
-    @Override
-    public UserDto findUser(String username) {
-        UserDto user = new UserBuilder().build();
 
-        return user;
-    }
-
-    @Override
-    public Map<String, UserDto> getUserMap() {
-        users.forEach((k,v)-> System.out.print("{"+k+","+v+"},"));
-        return users;
-    }
-
-    @Override
-    public String count() {
-        return users.size()+"";
-    }
 }

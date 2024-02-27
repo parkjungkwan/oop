@@ -8,6 +8,11 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     @Override
+    public String addUsers() {
+        return null;
+    }
+
+    @Override
     public String join(UserDto user) {
         return null;
     }
@@ -24,7 +29,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String updatePassword(UserDto user) {
-
+        return null;
     }
 
     @Override
@@ -49,6 +54,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String countUsers() {
-        return 0;
+        return "";
     }
 }
