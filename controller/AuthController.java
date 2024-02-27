@@ -5,8 +5,9 @@ import service.AuthService;
 import serviceImpl.AuthServiceImpl;
 
 import java.util.Map;
+import java.util.Scanner;
 
-public class AuthController {
+public class AuthController{
 
     AuthService auth;
 
@@ -14,24 +15,31 @@ public class AuthController {
         this.auth = AuthServiceImpl.getInstance();
     }
 
-    public String join() {
+    public String join(Scanner sc) {
 
-        return auth.join();
+        return auth.join(sc);
     }
 
     public String login() {
         return  auth.login();
     }
 
-    public void addUsers() {
+    public String addUsers() {
         auth.addUsers();
+        return "";
     }
 
-    public void findUser(String username) {
+    public UserDto findUser(String username) {
         auth.findUser(username);
+        return null;
     }
 
     public Map<String, UserDto> getUserMap() {
         return auth.getUserMap();
+    }
+
+    public String count(){
+        System.out.println("회원수 : "+auth.count()+" 명");
+        return auth.count();
     }
 }
