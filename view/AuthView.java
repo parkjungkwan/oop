@@ -33,7 +33,8 @@ public class AuthView {
                     break;
                 case "2":
                     System.out.println("2-로그인");
-                    authController.login(scanner);
+                    msg = authController.login(scanner);
+                    System.out.println("로그인 결과 : "+msg);
                     break;
                 case "3":
                     System.out.println("3-ID검색");

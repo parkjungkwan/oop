@@ -25,7 +25,18 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public String login(UserDto user) {
-        return null;
+        String msg = "";
+        UserDto userInMap = users.get(user.getUsername());
+        if(userInMap == null){
+            msg = "아이디 틀림";
+        }else{
+            if(userInMap.getPassword().equals(user.getPassword())){
+                msg = "로그인 성공";
+            }else{
+                msg = "비밀번호 틀림";
+            }
+        }
+        return msg;
     }
 
     @Override
