@@ -19,8 +19,8 @@ public class AuthServiceImpl implements AuthService {
     public static AuthService getInstance(){return instance;}
     @Override
     public String join(UserDto user) {
-
-        return null;
+        users.put(user.getUsername(), user);
+        return "회원가입 성공";
     }
 
     @Override
@@ -60,7 +60,12 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public String countUsers() {
-        return null;
+        return users.size()+"";
+    }
+
+    @Override
+    public Map<String, UserDto> getUserMap() {
+        return users;
     }
 
     @Override
@@ -79,7 +84,7 @@ public class AuthServiceImpl implements AuthService {
                             .build());
         }
         users = map;
-        return "더미값 추가";
+        return users.size()+"개 더미값 추가";
 
     }
 

@@ -17,4 +17,6 @@ public interface AuthService {
     List<UserDto> findUsersByName(String name);
     List<UserDto> findUsersByJob(String job);
     String countUsers();
+
+    Map<String, UserDto> getUserMap();
 }

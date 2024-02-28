@@ -100,14 +100,12 @@ public class UserDto {
         return "UserDto{" +
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", passwordConfirm='" + passwordConfirm + '\'' +
                 ", name='" + name + '\'' +
                 ", ssn='" + ssn + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", address='" + address + '\'' +
                 ", job='" + job + '\'' +
-                ", height=" + height +
-                ", weight=" + weight +
+                "\n"+
                 '}';
     }
 

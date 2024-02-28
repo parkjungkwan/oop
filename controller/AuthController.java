@@ -19,8 +19,7 @@ public class AuthController{
 
 
     public String addUsers() {
-        authService.addUsers();
-        return "";
+        return authService.addUsers();
     }
 
     public String join(Scanner scanner) {
@@ -52,6 +51,7 @@ public class AuthController{
 
     public UserDto findUserById(Scanner scanner) {
         System.out.println("검색할 ID 입력 : ");
+
         return authService.findUserById(scanner.next());
     }
 
@@ -69,10 +69,12 @@ public class AuthController{
         return authService.deleteUser(scanner.next());
     }
 
-    public List<UserDto> getUserList() {
+    public Map<String, UserDto> getUserMap() {
         System.out.println("전체 목록 출력");
-        return authService.getUserList();
+        return authService.getUserMap();
     }
+
+
 
     public List<UserDto> findUsersByName(Scanner scanner) {
         System.out.println("이름으로 검색");

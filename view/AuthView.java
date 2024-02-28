@@ -2,13 +2,16 @@ package view;
 
 import controller.AuthController;
 import controller.UserController;
+import model.UserDto;
 
+import java.util.Map;
 import java.util.Scanner;
 
 public class AuthView {
     public static void main( Scanner scanner) {
         AuthController authController = new AuthController();
-        authController.addUsers();
+        String msg = authController.addUsers();
+        System.out.println("authController.addUsers 결과 : "+msg);
         while(true){
             System.out.println("[관리자메뉴] 0-종료\n " +
                     "1-회원가입\n " +
@@ -25,7 +28,8 @@ public class AuthView {
                     System.out.println("종료");return;
                 case "1":
                     System.out.println("1-회원가입");
-                    authController.join(scanner);
+                    msg = authController.join(scanner);
+                    System.out.println("회원가입 결과 : "+msg);
                     break;
                 case "2":
                     System.out.println("2-로그인");
@@ -45,7 +49,10 @@ public class AuthView {
                     break;
                 case "6":
                     System.out.println("6-회원목록");
-                    authController.getUserList();
+                    Map<String, UserDto> users = authController.getUserMap();
+                    users.forEach((k,v)->{
+                        System.out.printf("아이디: %s, 회원정보: %s", k, v);
+                    });
                     break;
                 case "7":
                     System.out.println("7-이름검색");
@@ -57,7 +64,8 @@ public class AuthView {
                     break;
                 case "9":
                     System.out.println("9-회원수");
-                    authController.countUsers();
+                    String numberOfUsers = authController.countUsers();
+                    System.out.println("회원수 "+numberOfUsers);
                     break;
 
 

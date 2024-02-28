@@ -1,13 +1,15 @@
 package view;
 
 import controller.UserController;
+import model.UserDto;
 
 import java.util.Scanner;
 
 public class UserView {
-    public static void main( Scanner sc) {
-        UserController ctrl = new UserController();
-        ctrl.addUsers();
+    public static void main(Scanner sc) {
+        UserController userController = new UserController();
+        String msg = userController.addUsers();
+        System.out.println(" addUsers 결과 : "+msg);
         while(true){
             System.out.println("[사용자메뉴] 0-종료\n " +
                     "1-회원가입\n " +
@@ -48,6 +50,7 @@ public class UserView {
                     break;
                 case "9":
                     System.out.println("9-회원수");
+
                     break;
 
             }

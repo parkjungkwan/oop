@@ -1,10 +1,14 @@
 package serviceImpl;
 
 import model.UserDto;
+import repository.KaupRepository;
 import service.KaupService;
 import service.UtilService;
 
 public class KaupServiceImpl implements KaupService {
+
+
+
     private static KaupService instance = new KaupServiceImpl();
     private KaupServiceImpl(){}
     public static KaupService getInstance(){return instance;}
