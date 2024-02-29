@@ -1,6 +1,8 @@
 package model;
 
+import lombok.ToString;
 
+@ToString
 public class BoardDto {
     private int id;
     private String title;
@@ -37,12 +39,5 @@ public class BoardDto {
         this.writer = writer;
     }
 
-    @Override
-    public String toString() {
-        return "게시글{" +
-                "제목='" + title + '\'' +
-                ", 내용='" + content + '\'' +
-                ", 글쓴이='" + writer + '\'' +
-                '}';
-    }
+
 }

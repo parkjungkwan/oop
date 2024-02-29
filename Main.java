@@ -9,7 +9,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         while (true){
-            System.out.println("=== [메인화면] 0-종료 1-Auth관리 2-성적표 3-게시판 4-카우프 5-User관리 ===");
+            System.out.println("=== [메인화면] 0-종료 1-Auth관리 2-성적표 " +
+                    "3-게시판 4-카우프 5-User관리 6-Account관리 ===");
             switch (sc.next()){
                 case "0":  return;
                 case "1": AuthView.main(sc);break;
@@ -17,6 +18,7 @@ public class Main {
                 case "3": BoardView.main(); break;
                 case "4": KaupView.main(sc); break;
                 case "5": UserView.main(sc); break;
+                case "6": AccountView.main(sc); break;
             }
         }
 

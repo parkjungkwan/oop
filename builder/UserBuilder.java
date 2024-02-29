@@ -58,7 +58,14 @@ public class UserBuilder {
     }
 
     public UserDto build(){
-        return new UserDto(username, passwordConfirm, password, name, ssn,
-                phoneNumber, address, job,height, weight);
+        return new UserDto(username,
+                password,
+                name,
+                ssn,
+                phoneNumber,
+                address,
+                job,
+                height,
+                weight);
     }
 }

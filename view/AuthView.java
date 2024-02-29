@@ -37,16 +37,16 @@ public class AuthView {
                     System.out.println("로그인 결과 : "+msg);
                     break;
                 case "3":
-                    System.out.println("3-ID검색");
-                    authController.findUserById(scanner);
+                    System.out.println("3-ID 검색");
+                    System.out.println(authController.findUserById(scanner));
                     break;
                 case "4":
                     System.out.println("4-비번변경");
-                    authController.findUserById(scanner);
+                    System.out.println(authController.findUserById(scanner));
                     break;
                 case "5":
                     System.out.println("5-탈퇴");
-                    authController.deleteUser(scanner);
+                    System.out.println(authController.deleteUser(scanner));
                     break;
                 case "6":
                     System.out.println("6-회원목록");
@@ -57,11 +57,15 @@ public class AuthView {
                     break;
                 case "7":
                     System.out.println("7-이름검색");
-                    authController.findUsersByName(scanner);
+                    authController.findUsersByName(scanner).forEach((i)->{
+                        System.out.println(i);
+                    });
                     break;
                 case "8":
                     System.out.println("8-직업검색");
-                    authController.findUsersByJob(scanner);
+                    authController.findUsersByJob(scanner).forEach((i)->{
+                        System.out.println(i);
+                    });
                     break;
                 case "9":
                     System.out.println("9-회원수");

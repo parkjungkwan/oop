@@ -5,10 +5,7 @@ import model.UserDto;
 import service.AuthService;
 import service.UtilService;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class AuthServiceImpl implements AuthService {
     private static AuthService instance = new AuthServiceImpl();
@@ -25,47 +22,45 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public String login(UserDto user) {
-        String msg = "";
-        UserDto userInMap = users.get(user.getUsername());
-        if(userInMap == null){
-            msg = "아이디 틀림";
-        }else{
-            if(userInMap.getPassword().equals(user.getPassword())){
-                msg = "로그인 성공";
-            }else{
-                msg = "비밀번호 틀림";
-            }
-        }
-        return msg;
+        return users.getOrDefault(user.getUsername(), new UserBuilder().password("").build())
+                .getPassword()
+                .equals(user.getPassword()) ?
+                "로그인 성공" : "로그인 실패";
     }
 
     @Override
     public UserDto findUserById(String username) {
-        return null;
+        return users.get(username)
+                ;
     }
 
     @Override
     public String updatePassword(UserDto user) {
-        return null;
+        users.get(user.getUsername()).setPassword(user.getPassword());
+
+        return "비번 변경 성공";
     }
 
     @Override
     public String deleteUser(String username) {
-        return null;
+        users.remove(username);
+        return "회원삭제";
     }
 
     @Override
     public List<UserDto> getUserList() {
-        return null;
+        return  new ArrayList<>(users.values());
     }
 
     @Override
     public List<UserDto> findUsersByName(String name) {
+
         return null;
     }
 
     @Override
     public List<UserDto> findUsersByJob(String job) {
+
         return null;
     }
 
