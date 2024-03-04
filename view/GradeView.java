@@ -3,9 +3,8 @@ package view;
 import builder.SubjectBuilder;
 import builder.UserBuilder;
 import controller.GradeController;
-import model.SubjectDto;
-import model.UserDto;
-import service.GradeService;
+import model.Subject;
+import model.User;
 import service.UtilService;
 import serviceImpl.UtilServiceImpl;
 
@@ -27,10 +26,10 @@ public class GradeView {
         UtilService util = UtilServiceImpl.getInstance();
 
         System.out.println("학생 이름: ");
-        UserDto student = new UserBuilder()
+        User student = new UserBuilder()
                         .name(sc.next())
                         .build();
-        SubjectDto subjects = new SubjectBuilder()
+        Subject subjects = new SubjectBuilder()
                         .korean(util.createRandomInteger(0, 100))
                         .english(util.createRandomInteger(0, 100))
                         .math(util.createRandomInteger(0, 100))

@@ -1,20 +1,18 @@
 package serviceImpl;
 
 import builder.UserBuilder;
-import model.UserDto;
+import model.User;
 import repository.UserRepository;
-import service.AuthService;
 import service.UserService;
 import service.UtilService;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class UserServiceImpl implements UserService {
 
     UserRepository userRepository;
-    Map<String, UserDto> users;
+    Map<String, User> users;
 
     public UserServiceImpl() {
         userRepository = new UserRepository();
@@ -23,7 +21,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String addUsers() {
-        Map<String, UserDto> map = new HashMap<>();
+        Map<String, User> map = new HashMap<>();
         UtilService util = UtilServiceImpl.getInstance();
 
         for(int i=0; i<5; i++){

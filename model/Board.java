@@ -3,13 +3,13 @@ package model;
 import lombok.ToString;
 
 @ToString
-public class BoardDto {
+public class Board {
     private int id;
     private String title;
     private String content;
     private String writer;
 
-    public BoardDto(String title, String content, String writer) {
+    public Board(String title, String content, String writer) {
         this.title = title;
         this.content = content;
         this.writer = writer;

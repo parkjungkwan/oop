@@ -1,7 +1,7 @@
 package view;
 
 import controller.AccountController;
-import model.AccountDto;
+import model.Account;
 
 import java.util.List;
 import java.util.Scanner;

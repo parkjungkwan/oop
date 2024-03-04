@@ -1,17 +1,16 @@
 package view;
 
 import builder.BoardBuilder;
-import model.BoardDto;
+import model.Board;
 import service.UtilService;
 import serviceImpl.UtilServiceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class BoardView {
     public static void main() {
-        List<BoardDto> articles = new ArrayList<>();
+        List<Board> articles = new ArrayList<>();
         UtilService util = UtilServiceImpl.getInstance();
 
         for(int i =0;i<5;i++){
@@ -22,7 +21,7 @@ public class BoardView {
                     .build());
         }
 
-        for(BoardDto i : articles){
+        for(Board i : articles){
             System.out.println(i.toString());
         }
 

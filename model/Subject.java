@@ -1,12 +1,12 @@
 package model;
 
-public class SubjectDto {
+public class Subject {
     private int id;
     private int korean;
     private int english;
     private int math;
 
-    public SubjectDto(int korean, int english, int math) {
+    public Subject(int korean, int english, int math) {
         this.korean = korean;
         this.english = english;
         this.math = math;

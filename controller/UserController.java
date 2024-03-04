@@ -1,13 +1,7 @@
 package controller;
 
-import model.UserDto;
-import service.AuthService;
 import service.UserService;
-import serviceImpl.AuthServiceImpl;
 import serviceImpl.UserServiceImpl;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class UserController {
 
