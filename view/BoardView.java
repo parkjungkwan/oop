@@ -1,6 +1,5 @@
 package view;
 
-import builder.BoardBuilder;
 import model.Board;
 import service.UtilService;
 import serviceImpl.UtilServiceImpl;
@@ -14,7 +13,7 @@ public class BoardView {
         UtilService util = UtilServiceImpl.getInstance();
 
         for(int i =0;i<5;i++){
-            articles.add(new BoardBuilder()
+            articles.add(Board.builder()
                     .title(util.createRandomTitle())
                     .content(util.createRandomContent())
                     .writer(util.createRandomName())

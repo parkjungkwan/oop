@@ -1,7 +1,5 @@
 package view;
 
-import builder.SubjectBuilder;
-import builder.UserBuilder;
 import controller.GradeController;
 import model.Subject;
 import model.User;
@@ -26,10 +24,10 @@ public class GradeView {
         UtilService util = UtilServiceImpl.getInstance();
 
         System.out.println("학생 이름: ");
-        User student = new UserBuilder()
+        User student =  User.builder()
                         .name(sc.next())
                         .build();
-        Subject subjects = new SubjectBuilder()
+        Subject subjects =  Subject.builder()
                         .korean(util.createRandomInteger(0, 100))
                         .english(util.createRandomInteger(0, 100))
                         .math(util.createRandomInteger(0, 100))

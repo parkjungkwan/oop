@@ -1,6 +1,5 @@
 package serviceImpl;
 
-import builder.UserBuilder;
 import model.User;
 import repository.UserRepository;
 import service.UserService;
@@ -26,11 +25,9 @@ public class UserServiceImpl implements UserService {
 
         for(int i=0; i<5; i++){
             String username = util.createRandomUsername();
-            map.put(username,
-                    new UserBuilder()
+            map.put(username, User.builder()
                             .username(username)
                             .password("1")
-                            .passwordConfirm("1")
                             .name(util.createRandomName())
                             .build());
         }

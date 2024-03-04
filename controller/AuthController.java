@@ -1,6 +1,5 @@
 package controller;
 
-import builder.UserBuilder;
 import model.User;
 import service.AuthService;
 import serviceImpl.AuthServiceImpl;
@@ -31,10 +30,9 @@ public class AuthController{
                 "전화번호, " +
                 "주소, " +
                 "직업을 입력해주세요");
-        return authService.join(new UserBuilder()
+        return authService.join(User.builder()
                 .username(scanner.next())
                 .password(scanner.next())
-                .passwordConfirm(scanner.next())
                 .name(scanner.next())
                 .address(scanner.next())
                 .job(scanner.next())
@@ -43,7 +41,7 @@ public class AuthController{
 
     public String login(Scanner scanner) {
         System.out.println("로그인할 ID 입력 : ");
-        return authService.login(new UserBuilder()
+        return authService.login(User.builder()
                 .username(scanner.next())
                 .password(scanner.next())
                 .build());
@@ -58,7 +56,7 @@ public class AuthController{
     public String updatePassword(Scanner scanner) {
         System.out.println("수정할 ID 입력 : ");
         System.out.println("수정할 비번 입력 : ");
-        return authService.updatePassword(new UserBuilder()
+        return authService.updatePassword( User.builder()
                 .username(scanner.next())
                 .password(scanner.next())
                 .build());

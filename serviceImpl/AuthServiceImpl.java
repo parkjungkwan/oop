@@ -1,6 +1,5 @@
 package serviceImpl;
 
-import builder.UserBuilder;
 import model.User;
 import service.AuthService;
 import service.UtilService;
@@ -23,7 +22,7 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public String login(User user) {
-        return users.getOrDefault(user.getUsername(), new UserBuilder().password("").build())
+        return users.getOrDefault(user.getUsername(), User.builder().password("").build())
                 .getPassword()
                 .equals(user.getPassword()) ?
                 "로그인 성공" : "로그인 실패";
@@ -83,10 +82,9 @@ public class AuthServiceImpl implements AuthService {
         for(int i=0; i<5; i++){
             String username = util.createRandomUsername();
             map.put(username,
-                    new UserBuilder()
+                    User.builder()
                             .username(username)
                             .password("1")
-                            .passwordConfirm("1")
                             .name(util.createRandomName())
                             .build());
         }
