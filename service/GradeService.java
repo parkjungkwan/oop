@@ -1,6 +1,6 @@
 package service;
 
 public interface GradeService {
-    int getTotalScore();
-    double findAverage();
+    String getTotalScore();
+    String findAverage();
 }

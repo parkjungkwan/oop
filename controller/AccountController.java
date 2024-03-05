@@ -54,7 +54,7 @@ public class AccountController {
         return accountService.cancelAccount(sc.next());
     }
 
-    public List<Account> getAccounts() {
+    public List<?> getAccounts() {
         return accountService.getAccounts();
     }
 }

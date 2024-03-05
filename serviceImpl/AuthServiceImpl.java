@@ -48,18 +48,18 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    public List<User> getUserList() {
+    public List<?> getUserList() {
         return  new ArrayList<>(users.values());
     }
 
     @Override
-    public List<User> findUsersByName(String name) {
+    public List<?> findUsersByName(String name) {
 
         return null;
     }
 
     @Override
-    public List<User> findUsersByJob(String job) {
+    public List<?> findUsersByJob(String job) {
 
         return null;
     }
@@ -70,7 +70,7 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    public Map<String, User> getUserMap() {
+    public Map<String, ?> getUserMap() {
         return users;
     }
 

@@ -16,7 +16,7 @@ public class UtilServiceImpl implements UtilService {
 
     @Override
     public double createRandomDouble(int start, int gapBetweenStartAndEnd) {
-        return Math.round((start + Math.random() * gapBetweenStartAndEnd) * 10) / 10.0;
+        return (Math.round((start + Math.random() * gapBetweenStartAndEnd) * 10) / 10.0);
     }
 
     @Override

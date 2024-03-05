@@ -67,19 +67,19 @@ public class AuthController{
         return authService.deleteUser(scanner.next());
     }
 
-    public Map<String, User> getUserMap() {
+    public Map<String, ?> getUserMap() {
         System.out.println("전체 목록 출력");
         return authService.getUserMap();
     }
 
 
 
-    public List<User> findUsersByName(Scanner scanner) {
+    public List<?> findUsersByName(Scanner scanner) {
         System.out.println("이름으로 검색");
         return authService.findUsersByName(scanner.next());
     }
 
-    public List<User> findUsersByJob(Scanner scanner) {
+    public List<?> findUsersByJob(Scanner scanner) {
         System.out.println("직업으로 검색");
         return authService.findUsersByJob(scanner.next());
     }

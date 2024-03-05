@@ -45,7 +45,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public List<Account> getAccounts() {
+    public List<?> getAccounts() {
         return null;
     }
 }
