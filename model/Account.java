@@ -9,8 +9,7 @@ import java.util.Date;
 @ToString(exclude = {"id"})
 public class Account {
     private long id;
-    private String accountNumber;
-    private String accountHolder;
+    private String accountNumber, accountHolder;
     private double balance;
     private Date transactionDate;
 
